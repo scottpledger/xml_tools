@@ -1,7 +1,7 @@
 """Tests for content functions (get_text)"""
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _get_text_simple_test_impl(ctx):
     """Test get_text with simple text content."""

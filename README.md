@@ -1,4 +1,4 @@
-# xml_tools
+# xml.bzl
 
 A pure Starlark XML parser for Bazel. Parse XML strings and navigate the resulting document using a DOM-like API.
 
@@ -18,7 +18,7 @@ A pure Starlark XML parser for Bazel. Parse XML strings and navigate the resulti
 Add to your `MODULE.bazel`:
 
 ```starlark
-bazel_dep(name = "xml_tools", version = "<version>")
+bazel_dep(name = "xml.bzl", version = "<version>")
 ```
 
 ### With WORKSPACE
@@ -29,10 +29,10 @@ Add to your `WORKSPACE` file:
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
-    name = "xml_tools",
+    name = "xml.bzl",
     sha256 = "<sha256>",
-    strip_prefix = "xml_tools-<version>",
-    url = "https://github.com/scottpledger/xml_tools/releases/download/v<version>/xml_tools-v<version>.tar.gz",
+    strip_prefix = "xml.bzl-<version>",
+    url = "https://github.com/scottpledger/xml.bzl/releases/download/v<version>/xml.bzl-v<version>.tar.gz",
 )
 ```
 
@@ -41,7 +41,7 @@ http_archive(
 ### Basic Parsing
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 def _my_rule_impl(ctx):
     xml_content = '''<?xml version="1.0"?>
@@ -59,7 +59,7 @@ def _my_rule_impl(ctx):
 ### Navigating the DOM
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 doc = xml.parse("<root><a>1</a><b>2</b><c>3</c></root>")
 root = xml.get_document_element(doc)
@@ -81,7 +81,7 @@ print(xml.get_parent(root))  # None
 ### Working with Attributes
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 doc = xml.parse('<item id="123" type="widget" enabled="true"/>')
 root = xml.get_document_element(doc)
@@ -103,7 +103,7 @@ attrs = xml.get_attributes(root)  # {"id": "123", "type": "widget", "enabled": "
 ### Finding Elements
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 xml_str = '''
 <root>
@@ -134,7 +134,7 @@ enabled_items = xml.find_elements_by_attribute(doc, "enabled", "true")
 ### Type Checking
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 doc = xml.parse("<root>text<!--comment--></root>")
 root = xml.get_document_element(doc)
@@ -153,7 +153,7 @@ for child in xml.get_children(root):
 The parser tracks errors encountered during parsing. By default, it operates in lenient mode, continuing to parse even when errors are found.
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 # Lenient mode (default) - errors are tracked but parsing continues
 doc = xml.parse("<root><a></b></root>")  # Mismatched tags
@@ -174,7 +174,7 @@ for error in doc.errors:
 Use `strict=True` to fail immediately on any parsing error:
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 # Strict mode - fails on first error
 doc = xml.parse("<root><a></b></root>", strict = True)
@@ -204,7 +204,7 @@ Each error object has the following fields:
 ### Serialization
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 
 doc = xml.parse('<root><child attr="value">text</child></root>')
 
@@ -226,7 +226,7 @@ xml_string = xml.to_string(doc, pretty = False)
 All functions are accessed via the `xml` struct:
 
 ```starlark
-load("@xml_tools//xml:defs.bzl", "xml")
+load("@xml.bzl", "xml")
 ```
 
 ### Parsing

@@ -1,6 +1,6 @@
 "DOM-like API for working with parsed XML"
 
-load("//xml/private:parser.bzl", "NODE_CDATA", "NODE_COMMENT", "NODE_DOCUMENT", "NODE_ELEMENT", "NODE_PROCESSING_INSTRUCTION", "NODE_TEXT")
+load("//private:parser.bzl", "NODE_CDATA", "NODE_COMMENT", "NODE_DOCUMENT", "NODE_ELEMENT", "NODE_PROCESSING_INSTRUCTION", "NODE_TEXT")
 
 def is_element(node):
     """

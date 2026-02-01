@@ -1,7 +1,7 @@
 """Tests for type checking functions (is_element, is_text, etc.)"""
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _is_document_test_impl(ctx):
     """Test is_document function."""

@@ -3,7 +3,7 @@ See https://bazel.build/rules/testing#testing-starlark-utilities
 """
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _parse_simple_element_test_impl(ctx):
     """Test parsing a simple XML element."""

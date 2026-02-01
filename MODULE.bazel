@@ -1,7 +1,7 @@
 "Bazel dependencies"
 
 module(
-    name = "xml_tools",
+    name = "xml.bzl",
     version = "",
 )
 

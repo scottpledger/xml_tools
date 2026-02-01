@@ -1,7 +1,7 @@
-"Public API for xml_tools - XML parsing and building utilities for Starlark/Bazel"
+"Public API for xml.bzl - XML parsing and building utilities for Starlark/Bazel"
 
 load(
-    "//xml/private:builder.bzl",
+    "//private:builder.bzl",
     _cdata = "cdata",
     _comment = "comment",
     _document = "document",
@@ -10,7 +10,7 @@ load(
     _text = "text",
 )
 load(
-    "//xml/private:dom.bzl",
+    "//private:dom.bzl",
     _count_child_elements = "count_child_elements",
     _count_children = "count_children",
     _find_element_by_id = "find_element_by_id",
@@ -39,7 +39,7 @@ load(
     _walk = "walk",
 )
 load(
-    "//xml/private:parser.bzl",
+    "//private:parser.bzl",
     _ERROR_MISMATCHED_TAG = "ERROR_MISMATCHED_TAG",
     _ERROR_MULTIPLE_ROOT_ELEMENTS = "ERROR_MULTIPLE_ROOT_ELEMENTS",
     _ERROR_TEXT_OUTSIDE_ROOT = "ERROR_TEXT_OUTSIDE_ROOT",
@@ -50,7 +50,7 @@ load(
     _parse_xml = "parse_xml",
 )
 load(
-    "//xml/private:serializer.bzl",
+    "//private:serializer.bzl",
     _to_string = "to_string",
 )
 

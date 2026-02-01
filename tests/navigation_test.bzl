@@ -1,7 +1,7 @@
 """Tests for navigation functions (get_children, get_document_element, etc.)"""
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _get_document_element_test_impl(ctx):
     """Test get_document_element function."""

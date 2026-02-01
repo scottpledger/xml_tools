@@ -8,8 +8,8 @@ TAG=$1
 # The prefix is chosen to match what GitHub generates for source archives
 # This guarantees that users can easily switch from a released artifact to a source archive
 # with minimal differences in their code (e.g. strip_prefix remains the same)
-PREFIX="xml_tools-${TAG:1}"
-ARCHIVE="xml_tools-$TAG.tar.gz"
+PREFIX="xml.bzl-${TAG:1}"
+ARCHIVE="xml.bzl-$TAG.tar.gz"
 
 # NB: configuration for 'git archive' is in /.gitattributes
 git archive --format=tar --prefix=${PREFIX}/ ${TAG} | gzip > $ARCHIVE
@@ -30,7 +30,7 @@ cat << EOF
 2. Add to your \`MODULE.bazel\` file:
 
 \`\`\`starlark
-bazel_dep(name = "xml_tools", version = "${TAG:1}")
+bazel_dep(name = "xml.bzl", version = "${TAG:1}")
 \`\`\`
 
 ## Using WORKSPACE
@@ -40,10 +40,10 @@ Paste this snippet into your \`WORKSPACE.bazel\` file:
 \`\`\`starlark
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 http_archive(
-    name = "xml_tools",
+    name = "xml.bzl",
     sha256 = "${SHA}",
     strip_prefix = "${PREFIX}",
-    url = "https://github.com/scottpledger/xml_tools/releases/download/${TAG}/${ARCHIVE}",
+    url = "https://github.com/scottpledger/xml.bzl/releases/download/${TAG}/${ARCHIVE}",
 )
 EOF
 

@@ -1,7 +1,7 @@
 "Tests for XML builder functions"
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _element_basic_test_impl(ctx):
     env = unittest.begin(ctx)

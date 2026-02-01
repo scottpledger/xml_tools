@@ -1,6 +1,6 @@
 "XML parser that builds a DOM tree from tokens"
 
-load("//xml/private:tokenizer.bzl", "TOKEN_CDATA", "TOKEN_COMMENT", "TOKEN_DOCTYPE", "TOKEN_END_TAG", "TOKEN_PI", "TOKEN_SELF_CLOSING", "TOKEN_START_TAG", "TOKEN_TEXT", "TOKEN_XML_DECL", "tokenize")
+load("//private:tokenizer.bzl", "TOKEN_CDATA", "TOKEN_COMMENT", "TOKEN_DOCTYPE", "TOKEN_END_TAG", "TOKEN_PI", "TOKEN_SELF_CLOSING", "TOKEN_START_TAG", "TOKEN_TEXT", "TOKEN_XML_DECL", "tokenize")
 
 # Node types for the DOM tree
 NODE_ELEMENT = "element"

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/scottpledger/xml_tools",
+  "homepage": "https://github.com/scottpledger/xml.bzl",
   "maintainers": [
     {
       "github": "scottpledger",
@@ -7,7 +7,7 @@
       "github_user_id": 1452087
     }
   ],
-  "repository": ["github:scottpledger/xml_tools"],
+  "repository": ["github:scottpledger/xml.bzl"],
   "versions": [],
   "yanked_versions": {}
 }

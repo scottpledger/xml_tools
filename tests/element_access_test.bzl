@@ -1,7 +1,7 @@
 """Tests for element access functions (get_tag_name, get_attribute, etc.)"""
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _get_tag_name_test_impl(ctx):
     """Test get_tag_name function."""

@@ -1,7 +1,7 @@
 """Tests for serialization functions (to_string)"""
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _to_string_simple_test_impl(ctx):
     """Test to_string with simple element."""

@@ -1,7 +1,7 @@
 """Tests for search functions (find_elements_by_tag_name, find_element_by_id, etc.)"""
 
 load("@bazel_skylib//lib:unittest.bzl", "asserts", "unittest")
-load("//xml:defs.bzl", "xml")
+load("//:xml.bzl", "xml")
 
 def _find_elements_by_tag_name_test_impl(ctx):
     """Test find_elements_by_tag_name function."""
