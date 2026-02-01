@@ -8,8 +8,8 @@ TAG=$1
 # The prefix is chosen to match what GitHub generates for source archives
 # This guarantees that users can easily switch from a released artifact to a source archive
 # with minimal differences in their code (e.g. strip_prefix remains the same)
-PREFIX="rules_mylang-${TAG:1}"
-ARCHIVE="rules_mylang-$TAG.tar.gz"
+PREFIX="xml_tools-${TAG:1}"
+ARCHIVE="xml_tools-$TAG.tar.gz"
 
 # NB: configuration for 'git archive' is in /.gitattributes
 git archive --format=tar --prefix=${PREFIX}/ ${TAG} | gzip > $ARCHIVE
@@ -43,9 +43,8 @@ http_archive(
     name = "xml_tools",
     sha256 = "${SHA}",
     strip_prefix = "${PREFIX}",
-    url = "https://github.com/scottpledger/rules_mylang/releases/download/${TAG}/${ARCHIVE}",
+    url = "https://github.com/scottpledger/xml_tools/releases/download/${TAG}/${ARCHIVE}",
 )
 EOF
 
-awk 'f;/--SNIP--/{f=1}' e2e/smoke/WORKSPACE.bazel
 echo "\`\`\`"
