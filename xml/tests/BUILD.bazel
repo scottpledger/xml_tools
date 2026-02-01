@@ -1,0 +1,21 @@
+load(":content_test.bzl", "content_test_suite")
+load(":element_access_test.bzl", "element_access_test_suite")
+load(":navigation_test.bzl", "navigation_test_suite")
+load(":search_test.bzl", "search_test_suite")
+load(":serialization_test.bzl", "serialization_test_suite")
+load(":type_checking_test.bzl", "type_checking_test_suite")
+load(":xml_parser_test.bzl", "xml_parser_test_suite")
+
+xml_parser_test_suite(name = "xml_parser_test")
+
+type_checking_test_suite(name = "type_checking_test")
+
+element_access_test_suite(name = "element_access_test")
+
+navigation_test_suite(name = "navigation_test")
+
+search_test_suite(name = "search_test")
+
+content_test_suite(name = "content_test")
+
+serialization_test_suite(name = "serialization_test")

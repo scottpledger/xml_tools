@@ -1,7 +1,7 @@
 {
-  "homepage": "https://github.com/myorg/rules_mylang",
+  "homepage": "https://github.com/scottpledger/xml_tools",
   "maintainers": [],
-  "repository": ["github:myorg/rules_mylang"],
+  "repository": ["github:scottpledger/xml_tools"],
   "versions": [],
   "yanked_versions": {}
 }
