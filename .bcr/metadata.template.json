@@ -1,6 +1,12 @@
 {
   "homepage": "https://github.com/scottpledger/xml_tools",
-  "maintainers": [],
+  "maintainers": [
+    {
+      "github": "scottpledger",
+      "name": "Scott Pledger",
+      "github_user_id": 1452087
+    }
+  ],
   "repository": ["github:scottpledger/xml_tools"],
   "versions": [],
   "yanked_versions": {}
